@@ -16,7 +16,7 @@ const generatePastTimestamps = (count: number) => {
 const timestamps = generatePastTimestamps(15)
 
 export const mockDetections: Detection[] = timestamps.map((timestamp, index) => ({
-  id: `detection-${index}`,
+  label: `detection-${index}`,
   timestamp,
   imageUrl: `/placeholder.svg?height=300&width=400`,
   location: `Camera ${Math.floor(Math.random() * 5) + 1}`,
