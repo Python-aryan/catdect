@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import DetectionFeed from "@/components/detection-feed"
 import DetectionChart from "@/components/detection-chart"
 import { mockDetections } from "@/lib/mock-data"
+import Head from 'next/head';
 
 interface Detection {
   label: string;
@@ -57,6 +58,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex min-h-screen flex-col bg-muted/40">
+      <link rel="icon" type="image/png" href="/favicon.ico" />
       <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
         <div className="flex items-center gap-2">
           <Cat className="h-6 w-6" />
@@ -69,9 +71,9 @@ export default function Dashboard() {
               Live
             </Badge>
           ) : (
-            <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200 flex gap-2 items-center">
-              <span className="h-2 w-2 rounded-full bg-red-500"></span>
-              Offline
+            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 flex gap-2 items-center">
+              <span className="h-2 w-2 rounded-full bg-green-500"></span>
+              Online
             </Badge>
           )}
         </div>

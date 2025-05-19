@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Cat Detection Dashboard",
+  title: "Catdect",
   description: "Real-time dashboard for cat detection monitoring",
     generator: 'v0.dev'
 }
