@@ -5,6 +5,7 @@ import { subHours, format, startOfHour, addHours } from "date-fns"
 import type { Detection } from "@/lib/types"
 import { Card } from "@/components/ui/card"
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "@/components/ui/chart"
+import { formatInTimeZone } from 'date-fns-tz';
 
 interface DetectionChartProps {
   detections: Detection[]
@@ -17,7 +18,7 @@ export default function DetectionChart({ detections }: { detections: Detection[]
         <div key={index} className="p-4 border rounded-md shadow-sm">
           <p><strong>Detected:</strong> {detection.location}</p>
           <p><strong>Time:</strong>
-                {format(new Date(detection.timestamp), "dd MMM yyyy, hh:mm a")}</p>
+            {formatInTimeZone(detection.timestamp, 'UTC', 'dd MMM yyyy, hh:mm a')}</p>
           {/* {detection.imageUrl && (
             <img
               src={detection.imageUrl}
