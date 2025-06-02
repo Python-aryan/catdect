@@ -113,15 +113,6 @@ export default function Dashboard() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-          <Card className="md:col-span-2 lg:col-span-4">
-            <CardHeader>
-              <CardTitle>Detection Trend</CardTitle>
-              <CardDescription>Cat detection activity over time</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <DetectionChart detections={detections} />
-            </CardContent>
-          </Card>
           <Card className="md:col-span-2 lg:col-span-3">
             <CardHeader>
               <CardTitle>Recent Detections</CardTitle>
@@ -129,6 +120,15 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <DetectionFeed detections={detections} />
+            </CardContent>
+          </Card>
+          <Card className="md:col-span-2 lg:col-span-4">
+            <CardHeader>
+              <CardTitle>Detection Trend</CardTitle>
+              <CardDescription>Cat detection activity over time</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <DetectionChart detections={detections} />
             </CardContent>
           </Card>
         </div>
