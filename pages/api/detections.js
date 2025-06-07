@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   try {
     const client = await clientPromise
     const db = client.db('cat_detector')
-    const collection = db.collection('collection')
+    const collection = db.collection('cloudcollections')
 
     if (req.method === 'GET') {
       const detections = await collection.find({}).sort({ timestamp: -1 }).toArray()
